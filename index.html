@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clínica dos Óculos — Sua visão, nossa especialidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#B0001A;--red2:#7E000F;--red3:#E0182F;--ink:#111;--bg:#fff;--alt:#F4F2EC;--card:#fff;--text:#141414;--muted:#575757;--line:#e1ddd3;--btn:#111;--btnt:#fff;--pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='166' viewBox='0 0 96 166'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.11' stroke-width='1.3'%3E%3Ccircle cx='0' cy='0' r='48'/%3E%3Ccircle cx='96' cy='0' r='48'/%3E%3Ccircle cx='48' cy='83' r='48'/%3E%3Ccircle cx='0' cy='166' r='48'/%3E%3Ccircle cx='96' cy='166' r='48'/%3E%3Ccircle cx='48' cy='-83' r='48'/%3E%3Ccircle cx='48' cy='249' r='48'/%3E%3C/g%3E%3C/svg%3E");--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E0E0F;--alt:#171718;--card:#1c1c1e;--text:#F3F1EC;--muted:#b5b1a8;--line:#2d2d30;--btn:#fff;--btnt:#111;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E0E0F;--alt:#171718;--card:#1c1c1e;--text:#F3F1EC;--muted:#b5b1a8;--line:#2d2d30;--btn:#fff;--btnt:#111;color-scheme:dark}
+html{scroll-padding-top:calc(90px + env(safe-area-inset-top,0px));scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box;margin:0}
+html,body{max-width:100%;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font:400 16.5px/1.65 "Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3,h4{font-weight:800;line-height:1.12;letter-spacing:-.02em;overflow-wrap:break-word}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--red3);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:30}
+.top{background:var(--ink);color:#eee;font-size:13px;padding:8px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.top a{color:#fff}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:12px}
+.logo img{height:58px;width:58px}
+nav{display:flex;gap:26px;font-weight:600;font-size:14.5px}
+nav a{color:var(--text);text-decoration:none}nav a:hover{color:var(--red)}
+.hr{display:flex;gap:8px;align-items:center}
+.bagbtn{background:var(--red);color:#fff;font-weight:700;font-size:14px;border-radius:99px;padding:11px 18px;display:flex;gap:9px;align-items:center}
+.bagbtn b{background:#fff;color:var(--red);border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px;padding:0 5px}
+.menu{display:none;width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--line);place-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;background:var(--btn);color:var(--btnt);font-weight:700;font-size:15px;text-decoration:none;border-radius:99px;padding:14px 28px;transition:transform .2s,box-shadow .2s;line-height:1.2}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.btn.r{background:var(--red);color:#fff}
+.btn.w{background:#fff;color:var(--red2)}
+.btn.o{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn.wa{background:#128C4A;color:#fff}
+.btn.sm{padding:11px 20px;font-size:14px}
+.red{position:relative;isolation:isolate;color:#fff;background:radial-gradient(ellipse 60% 70% at 85% 0%,#E8213A 0,rgba(232,33,58,0) 62%),radial-gradient(ellipse 70% 80% at 0% 100%,#5E000B 0,rgba(94,0,11,0) 65%),linear-gradient(135deg,#B0001A,#8E0014)}
+.red::before{content:"";position:absolute;inset:0;background:var(--pat);z-index:-1;-webkit-mask-image:linear-gradient(180deg,#000 30%,rgba(0,0,0,.35));mask-image:linear-gradient(180deg,#000 30%,rgba(0,0,0,.35))}
+.red::after,.blk::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.09;mix-blend-mode:overlay;pointer-events:none;z-index:-1}
+.beam{position:absolute;z-index:-1;left:-10%;top:-40%;width:70%;height:180%;background:linear-gradient(100deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.13) 50%,rgba(255,255,255,0) 70%);transform:rotate(14deg);filter:blur(24px);pointer-events:none}
+.blk{position:relative;isolation:isolate;background:radial-gradient(ellipse 60% 60% at 100% 0%,rgba(176,0,26,.55) 0,rgba(176,0,26,0) 70%),radial-gradient(ellipse 50% 50% at 0% 100%,rgba(176,0,26,.32) 0,rgba(176,0,26,0) 70%),#0d0d0e;color:#fff}
+.blk::before{content:"";position:absolute;inset:0;background:var(--pat);opacity:.55;z-index:-1}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center;padding-top:52px;padding-bottom:84px}
+.chipw{display:inline-block;background:#fff;color:var(--ink);font-weight:700;font-size:13px;border-radius:99px;padding:8px 16px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,8.2vw,58px);margin-bottom:20px}
+.hero p.l{font-size:18px;color:#ffe6e8;max-width:500px;margin-bottom:28px}
+.hero .bt{display:flex;gap:12px;flex-wrap:wrap}
+.ticks{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#141414;color:#fff;border-radius:99px;padding:9px 16px 9px 12px;font-weight:600;font-size:13.5px;box-shadow:0 4px 0 rgba(255,255,255,.85)}
+.pill .ic{width:18px;height:18px;color:#ff6b7c}
+.art{display:grid;grid-template-columns:1.12fr 1fr;gap:14px}
+.art>div{position:relative;overflow:hidden;border-radius:30px;border:4px solid #fff;box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.art .a{grid-row:1/3;min-height:420px}.art .b{aspect-ratio:1}.art .c{aspect-ratio:5/4}
+.art .cap{position:absolute;left:12px;right:12px;bottom:12px;background:#ECEAE3;color:var(--ink);font-weight:700;font-size:14px;line-height:1.3;border-radius:99px;padding:10px 16px;text-align:center}
+.mq{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:700;font-size:15px;letter-spacing:.06em}
+.mq div{display:inline-block;animation:mq 36s linear infinite}
+.mq span{margin:0 22px;color:var(--red3)}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:84px 0}
+h2{font-size:clamp(26px,4.6vw,44px)}
+.kick{font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--red);margin-bottom:12px}
+.blk .kick,.red .kick{color:#ff9aa6}
+.sub{color:var(--muted);margin:14px 0 34px;max-width:620px;font-size:17px}
+.blk .sub,.red .sub{color:#e9d9db}
+.perks{padding:64px 0 0}
+.perks .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.perk{background:var(--alt);border-radius:28px;padding:26px}
+.perk .ic{width:50px;height:50px;padding:13px;border-radius:50%;background:var(--red);color:#fff;margin-bottom:16px}
+.perk strong{display:block;font-size:17px;line-height:1.25;margin-bottom:6px}
+.perk span{color:var(--muted);font-size:15px;line-height:1.5}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pics{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
+.pics div{position:relative;border-radius:30px;overflow:hidden;background:var(--alt)}
+.pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pics .p1{grid-row:1/3;min-height:460px}.pics .p2{aspect-ratio:1}.pics .p3{aspect-ratio:1}
+.about p{color:var(--muted);margin-top:16px;font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.about .btn+.btn{margin-left:8px}
+.svc .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sv{background:#161617;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column}
+.sv img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.sv .t{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.sv h3{font-size:18px}.sv p{color:#cfc9ca;font-size:14.5px;line-height:1.55;flex:1}
+.sv .btn{margin-top:10px}
+.bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:30px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border-radius:99px;padding:10px 20px;background:var(--alt);font-weight:600;font-size:14px;box-shadow:inset 0 0 0 1px var(--line)}
+.chip[aria-pressed=true]{background:var(--red);color:#fff;box-shadow:none}
+.sort{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:10px 16px;font-size:14px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;text-align:left;transition:transform .3s,box-shadow .3s;color:var(--text)}
+.card:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(176,0,26,.18)}
+.card .ph{aspect-ratio:1/1;overflow:hidden;background:var(--alt);position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .tg{position:absolute;left:12px;top:12px;background:var(--ink);color:#fff;font-weight:700;font-size:12px;border-radius:99px;padding:5px 12px}
+.card .in{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card .ct{font-weight:700;font-size:12px;color:var(--red);letter-spacing:.04em}
+.card h3{font-size:17px;line-height:1.25}
+.card .d{color:var(--muted);font-size:14px;flex:1}
+.pr{font-weight:800;font-size:22px;margin-top:6px}
+.pr small{font-weight:500;font-size:12px;color:var(--muted);display:block;margin-top:-2px}
+.card .acts{display:flex;gap:8px;margin-top:10px}
+.card .acts span{flex:1;display:flex;align-items:center;justify-content:center;border-radius:99px;padding:11px 8px;font-weight:700;font-size:13.5px}
+.card .a1{background:var(--btn);color:var(--btnt)}.card .a2{box-shadow:inset 0 0 0 1.5px var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:10px;list-style:none;padding:0}
+.steps li{background:#141414;border-radius:28px;padding:26px;box-shadow:0 5px 0 rgba(255,255,255,.85)}
+.steps b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red3);color:#fff;font-weight:800;margin-bottom:14px}
+.steps h3{font-size:18px;margin-bottom:6px}.steps p{color:#d6d0d1;font-size:14.5px;line-height:1.55}
+.look{background:var(--alt)}
+.look .row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.look .row div{position:relative;aspect-ratio:3/4;border-radius:30px;overflow:hidden}
+.look .row div:nth-child(even){margin-top:32px}
+.look img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--red);font-size:28px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{color:var(--muted);margin-top:10px;max-width:700px;font-size:16px}
+.faq{max-width:800px;margin-top:20px}
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.box{border-radius:30px;padding:34px;background:var(--alt)}
+.box.k{background:var(--ink);color:#fff}
+.box h3{font-size:24px;margin-bottom:12px}
+.box p{margin-bottom:4px;color:var(--muted)}.box.k p{color:#d6d0d1}
+.box .btn{margin:16px 8px 0 0}
+.cta{text-align:center;padding:84px 0}
+.cta p{color:#ffe6e8;margin:14px auto 28px;max-width:520px}
+footer{background:#070707;color:#bdb8b8;padding:56px 0 40px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer h4{color:#ff9aa6;font-size:13px;letter-spacing:.1em;margin-bottom:12px}
+footer a{color:#fff}footer img{height:76px;width:76px;margin-bottom:14px}
+footer p{font-size:15px}
+footer .note{grid-column:1/-1;font-size:13px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;width:58px;height:58px;border-radius:50%;background:#128C4A;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.fab svg{width:30px;height:30px;fill:#fff}
+.scrim{position:fixed;inset:0;background:rgba(5,5,5,.68);z-index:40;display:none}.scrim.on{display:block}
+.modal,.drawer{position:fixed;z-index:50;background:var(--bg);display:none;color:var(--text)}
+.modal{inset:max(12px,env(safe-area-inset-top,0px)) 12px max(12px,env(safe-area-inset-bottom,0px));margin:auto;max-width:960px;max-height:700px;border-radius:30px;overflow:hidden}
+.modal.on{display:grid;grid-template-columns:1.05fr 1fr}
+.mg{background:var(--alt);display:flex;flex-direction:column;min-height:0}
+.mg>img{flex:1;min-height:0;width:100%;object-fit:cover}
+.thumbs{display:flex;gap:10px;padding:12px}
+.thumbs button{width:64px;height:64px;border-radius:14px;overflow:hidden;opacity:.6;box-shadow:inset 0 0 0 1px var(--line)}
+.thumbs button[aria-pressed=true]{opacity:1;box-shadow:0 0 0 3px var(--red)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.mi{padding:34px 30px 28px;display:flex;flex-direction:column;gap:12px;overflow:auto;min-height:0}
+.mi h2{font-size:28px;padding-right:34px}
+.mi .pr{font-size:30px;margin:0}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14.5px;border-top:1px solid var(--line);padding-top:14px}
+.spec dt{color:var(--muted);font-weight:600}.spec dd{margin:0;font-weight:600}
+.note2{font-size:13.5px;color:var(--muted);background:var(--alt);border-radius:16px;padding:12px 14px}
+.qrow{display:flex;gap:10px;align-items:center}
+.qty{display:inline-flex;align-items:center;border-radius:99px;box-shadow:inset 0 0 0 1.5px var(--line);flex:none}
+.qty button{width:40px;height:44px;font-weight:800;font-size:18px}
+.qty span{min-width:26px;text-align:center;font-weight:700}
+.mi .btn{width:100%}
+.x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--ink);font-size:20px;box-shadow:0 2px 10px rgba(0,0,0,.3);z-index:3}
+.drawer{top:0;right:0;bottom:0;width:min(480px,100%);flex-direction:column}
+.drawer.on{display:flex}
+.dh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 20px;padding-top:max(16px,env(safe-area-inset-top,0px));border-bottom:1px solid var(--line)}
+.dh h2{font-size:22px}
+.dh .x{position:static;box-shadow:inset 0 0 0 1.5px var(--line);background:transparent;color:var(--text)}
+.ds{flex:1;overflow:auto;padding:18px 20px;min-height:0}
+.df{padding:14px 20px;padding-bottom:max(14px,env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--bg)}
+.it{display:grid;grid-template-columns:72px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:10px}
+.it img{width:72px;height:72px;object-fit:cover;border-radius:12px}
+.it strong{font-size:14.5px;line-height:1.3;display:block}
+.it small{color:var(--muted);display:block;font-size:13px}
+.it .r2{display:flex;justify-content:space-between;align-items:center;margin-top:6px;gap:8px}
+.it .qty button{width:34px;height:34px}
+.rm{color:var(--muted);font-size:12.5px;text-decoration:underline}
+.empty{color:var(--muted);text-align:center;padding:44px 10px}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:19px;margin-bottom:4px}
+.fr{font-size:13px;color:var(--muted);margin-bottom:12px}
+.fm{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fm .f{grid-column:1/-1}
+.fm label{display:block;font-weight:600;font-size:13.5px;margin-bottom:4px}
+.fm input,.fm select,.fm textarea{width:100%;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;font-size:16px}
+.fm [aria-invalid=true]{border-color:var(--red3)}
+.fm h3{grid-column:1/-1;font-size:15px;margin-top:6px}
+.drawer .btn{width:100%}
+.drawer .bk{margin-bottom:12px;color:var(--muted);font-weight:600;font-size:14px;text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:99px;opacity:0;transition:.3s;z-index:60;pointer-events:none;max-width:90vw;text-align:center;font-size:14px;font-weight:600}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:980px){.perks .wrap,.steps,.svc .grid4{grid-template-columns:1fr 1fr}.look .row{grid-template-columns:1fr 1fr}.look .row div:nth-child(even){margin-top:0}}
+@media (max-width:900px){.menu{display:grid}nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);padding:8px 20px 14px;border-bottom:1px solid var(--line)}nav.open{display:flex}nav a{padding:13px 0;border-bottom:1px solid var(--line)}.hero .wrap,.about .wrap,.loc,footer .wrap{grid-template-columns:1fr}.hero .wrap{padding-top:36px;padding-bottom:64px;gap:34px}.art .a{min-height:300px}.pics .p1{min-height:340px}.top .m{display:none}section{padding:60px 0}.perks{padding-top:44px}.modal.on{display:flex;flex-direction:column;max-height:none}.mg{flex:0 0 34%}.mg>img{height:100%}.mi{flex:1;padding:22px 20px}.mi h2{font-size:23px}.bagbtn span{display:none}}
+@media (max-width:560px){.perks .wrap,.steps,.svc .grid4,.look .row{grid-template-columns:1fr}.look .row div{aspect-ratio:4/3}.grid{grid-template-columns:1fr 1fr;gap:12px}.card .in{padding:12px 12px 14px}.card h3{font-size:15px}.card .d{display:none}.pr{font-size:18px}.card .acts span{font-size:12.5px;padding:10px 4px}.card .tg{font-size:11px;left:8px;top:8px}.fm{grid-template-columns:1fr}.fm .h{grid-column:1/-1}.hero .btn{flex:1 1 100%}.about .btn+.btn{margin:10px 0 0}.about .btn{width:100%}.box .btn{width:100%;margin:12px 0 0}.bar{flex-direction:column;align-items:stretch}.sort{width:100%}.art{gap:10px}.art>div{border-width:3px;border-radius:24px}.art .cap{font-size:12.5px;padding:8px 10px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></symbol>
+<symbol id="i-ok" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+</defs></svg>
+<div class="top"><div class="wrap"><span>Enviamos para todo o Brasil</span><span class="m">Av. Central, 28 · Planalto Serrano · Serra, ES · <a href="https://www.instagram.com/clinicadosoculos.serra" target="_blank" rel="noopener">@clinicadosoculos.serra</a></span></div></div>
+<header><div class="wrap">
+<a class="logo" href="#topo" aria-label="Clínica dos Óculos"><img data-i="logo" alt="Clínica dos Óculos"></a>
+<nav id="nav"><a href="#catalogo">Óculos</a><a href="#servicos">Serviços</a><a href="#como">Como comprar</a><a href="#sobre">A clínica</a><a href="#contato">Contato</a></nav>
+<div class="hr"><button class="bagbtn" id="openBag" aria-label="Abrir sacola"><svg class="ic"><use href="#i-bag"/></svg><span>Sacola</span> <b id="count">0</b></button><button class="menu" id="menu" aria-label="Abrir menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button></div>
+</div></header>
+<main id="topo">
+<div class="hero red"><div class="beam"></div><div class="wrap">
+<div>
+<span class="chipw">Enviamos para todo o Brasil</span>
+<h1>Sua visão, nossa especialidade.</h1>
+<p class="l">Armações, óculos de sol, lentes e conserto, com atendimento direto pelo WhatsApp. Escolha seus óculos, monte a sacola e receba onde estiver.</p>
+<div class="bt"><a class="btn w" href="#catalogo">Ver óculos</a><a class="btn o" data-wa="Olá, Clínica dos Óculos! Vim pelo site e gostaria de atendimento." href="#">Falar no WhatsApp</a></div>
+<div class="ticks"><span class="pill"><svg class="ic"><use href="#i-tool"/></svg>Conserto de óculos</span><span class="pill"><svg class="ic"><use href="#i-eye"/></svg>Luz azul e fotossensíveis</span></div>
+</div>
+<div class="art"><div class="a"><img data-i="model" alt="Cliente sorrindo com armação e clip solar"><span class="cap">Realce sua beleza natural!</span></div><div class="b"><img data-i="mirror1" alt="Cliente com óculos esportivo espelhado"></div><div class="c"><img data-i="group" alt="Três armações com estojo da Clínica dos Óculos"></div></div>
+</div></div>
+<div class="mq"><div id="mq"></div></div>
+
+<div class="perks"><div class="wrap">
+<div class="perk"><svg class="ic"><use href="#i-truck"/></svg><strong>Envio para todo o Brasil</strong><span>Você escolhe, informa o endereço e a loja cuida do envio.</span></div>
+<div class="perk"><svg class="ic"><use href="#i-tool"/></svg><strong>Conserto de óculos</strong><span>Quebrado, torto ou desparafusado? Consertamos para você.</span></div>
+<div class="perk"><svg class="ic"><use href="#i-eye"/></svg><strong>Lentes para cada rotina</strong><span>Luz azul, fotossensíveis e muito mais, sob orçamento.</span></div>
+<div class="perk"><svg class="ic"><use href="#i-chat"/></svg><strong>Atendimento no WhatsApp</strong><span>Tire dúvidas e acompanhe seu pedido direto com a loja.</span></div>
+</div></div>
+
+<section id="catalogo"><div class="wrap">
+<div class="kick">CATÁLOGO</div>
+<h2>Escolha os seus óculos</h2>
+<p class="sub">Toque em um modelo para ver fotos, medidas e detalhes. Adicione à sacola e finalize o pedido pelo WhatsApp.</p>
+<div class="bar"><div class="chips" id="chips"></div><select class="sort" id="sort" aria-label="Ordenar"><option value="0">Ordenar: em destaque</option><option value="1">Menor preço</option><option value="2">Maior preço</option></select></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="svc blk" id="servicos"><div class="wrap">
+<div class="kick">SERVIÇOS</div>
+<h2>Cuidamos da sua visão de ponta a ponta</h2>
+<p class="sub">Além dos óculos, a Clínica oferece soluções para o seu dia a dia. Fale com a gente e peça seu orçamento.</p>
+<div class="grid4">
+<div class="sv"><img data-i="postfix" alt="Seu óculos quebrou? Consertamos para você" loading="lazy"><div class="t"><h3>Conserto de óculos</h3><p>Quebrado, torto ou desparafusado? Consertamos para você.</p><a class="btn r sm" data-wa="Olá, Clínica dos Óculos! Preciso consertar meu óculos." href="#">Pedir conserto</a></div></div>
+<div class="sv"><img data-i="postblue" alt="Proteja seus olhos da luz azul" loading="lazy"><div class="t"><h3>Lentes de luz azul</h3><p>Reduzem a fadiga ocular e ajudam a aumentar a qualidade do sono.</p><a class="btn r sm" data-wa="Olá, Clínica dos Óculos! Quero um orçamento de lentes com filtro de luz azul." href="#">Pedir orçamento</a></div></div>
+<div class="sv"><img data-i="postphoto" alt="Lentes que se adaptam à luz" loading="lazy"><div class="t"><h3>Lentes fotossensíveis</h3><p>Conforto e proteção contra os raios UV, onde quer que você esteja.</p><a class="btn r sm" data-wa="Olá, Clínica dos Óculos! Quero um orçamento de lentes fotossensíveis." href="#">Pedir orçamento</a></div></div>
+<div class="sv"><img data-i="postface" alt="Óculos que combinam com seu formato de rosto" loading="lazy"><div class="t"><h3>Armação ideal para o seu rosto</h3><p>Óculos que combinam com o seu formato de rosto e realçam a sua beleza natural.</p><a class="btn r sm" data-wa="Olá, Clínica dos Óculos! Quero ajuda para escolher a armação ideal para o meu rosto." href="#">Quero ajuda</a></div></div>
+</div></div></section>
+
+<section class="red" id="como"><div class="beam"></div><div class="wrap">
+<div class="kick">COMO COMPRAR</div>
+<h2>Do clique à sua casa em 4 passos</h2>
+<p class="sub">Compre de qualquer lugar do Brasil. O pedido chega pronto para a loja, com os seus dados de entrega.</p>
+<ol class="steps">
+<li><b>1</b><h3>Escolha</h3><p>Navegue pelo catálogo e veja fotos, medidas e preços.</p></li>
+<li><b>2</b><h3>Monte a sacola</h3><p>Adicione os modelos e ajuste as quantidades.</p></li>
+<li><b>3</b><h3>Informe a entrega</h3><p>Preencha endereço, CEP e contato uma única vez.</p></li>
+<li><b>4</b><h3>Envie pelo WhatsApp</h3><p>A loja recebe tudo, confirma o frete e combina o pagamento.</p></li>
+</ol></div></section>
+
+<section class="about" id="sobre"><div class="wrap">
+<div class="pics"><div class="p1"><img data-i="sport1" alt="Cliente com óculos de sol esportivo preto" loading="lazy"></div><div class="p2"><img data-i="redsilver" alt="Armação redonda prateada" loading="lazy"></div><div class="p3"><img data-i="wine" alt="Armação gatinho vinho com spray limpa lentes" loading="lazy"></div></div>
+<div>
+<div class="kick">A CLÍNICA</div>
+<h2>Sua visão, nossa especialidade</h2>
+<p>A Clínica dos Óculos reúne armações, óculos de sol, lentes e conserto em um só lugar, em Serra, no Espírito Santo. O atendimento é próximo e direto pelo WhatsApp, para você escolher com calma e tirar todas as dúvidas.</p>
+<p>E você não precisa estar por perto: a loja envia para todo o Brasil, com pedido organizado e confirmação de frete antes de fechar.</p>
+<div class="facts"><span class="pill" style="box-shadow:none"><svg class="ic"><use href="#i-ok"/></svg>Armações e óculos de sol</span><span class="pill" style="box-shadow:none"><svg class="ic"><use href="#i-ok"/></svg>Lentes sob orçamento</span><span class="pill" style="box-shadow:none"><svg class="ic"><use href="#i-ok"/></svg>Conserto</span></div>
+<a class="btn r" href="#catalogo">Ver catálogo</a><a class="btn" data-wa="Olá, Clínica dos Óculos! Gostaria de saber mais." href="#">Falar com a loja</a>
+</div></div></section>
+
+<section class="look"><div class="wrap">
+<div class="kick">ESTILO</div>
+<h2>Óculos para cada jeito de ser</h2>
+<p class="sub">Esportivos, espelhados, gatinho e muito mais. Escolha o que tem a ver com você.</p>
+<div class="row"><div><img data-i="mirror2" alt="Óculos esportivo espelhado" loading="lazy"></div><div><img data-i="sport2" alt="Óculos esportivo preto" loading="lazy"></div><div><img data-i="sunblack" alt="Óculos de sol gatinho preto" loading="lazy"></div><div><img data-i="clip" alt="Armação com clip solar" loading="lazy"></div></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="kick">DÚVIDAS</div>
+<h2>Perguntas frequentes</h2>
+<div class="faq">
+<details><summary>Vocês enviam para todo o Brasil?</summary><p>Sim. Basta informar o endereço e o CEP ao finalizar. A loja calcula o frete e confirma o valor com você pelo WhatsApp antes de fechar o pedido.</p></details>
+<details><summary>Como funciona o pagamento?</summary><p>Ao enviar o pedido, você indica a forma de pagamento preferida. A loja confirma as opções disponíveis e combina tudo pelo WhatsApp.</p></details>
+<details><summary>Os preços das armações incluem lentes?</summary><p>O valor mostrado é o da armação. Para lentes de grau, luz azul ou fotossensíveis, a loja faz o orçamento pelo WhatsApp. Os óculos de sol têm preço fixo.</p></details>
+<details><summary>Posso mandar meu óculos para conserto?</summary><p>Fale com a loja pelo WhatsApp e combine como enviar ou trazer o seu óculos.</p></details>
+</div></div></section>
+
+<section class="red cta" id="contato" style="padding:0"><div class="beam"></div>
+<div class="wrap" style="padding-top:84px;padding-bottom:30px"><h2>Pronto para escolher o seu?</h2><p>Chame a loja no WhatsApp e tire suas dúvidas agora mesmo.</p><a class="btn w" data-wa="Olá, Clínica dos Óculos! Vim pelo site." href="#">Chamar no WhatsApp</a></div>
+<div class="wrap" style="padding-bottom:84px"><div class="loc">
+<div class="box k"><h3>Onde estamos</h3><p>Av. Central, 28 · Planalto Serrano</p><p>Bloco A · Serra · ES · 29178-207</p><p>Atrás do posto de gasolina Rede Show</p><a class="btn w" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Central+28+Planalto+Serrano+Bloco+A+Serra+ES+29178-207">Ver no mapa</a></div>
+<div class="box k"><h3>Fale com a gente</h3><p>WhatsApp: (27) 99654-9988</p><p>Instagram: @clinicadosoculos.serra</p><a class="btn wa" data-wa="Olá, Clínica dos Óculos! Gostaria de mais informações." href="#">WhatsApp</a><a class="btn o" target="_blank" rel="noopener" href="https://www.instagram.com/clinicadosoculos.serra">Instagram</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">
+<div><img data-i="logo" alt="Clínica dos Óculos"><p>Sua visão, nossa especialidade. Armações, óculos de sol, lentes e conserto, com envio para todo o Brasil.</p></div>
+<div><h4>NAVEGUE</h4><p><a href="#catalogo">Óculos</a><br><a href="#servicos">Serviços</a><br><a href="#como">Como comprar</a><br><a href="#sobre">A clínica</a></p></div>
+<div><h4>ATENDIMENTO</h4><p>Av. Central, 28 · Planalto Serrano<br>Bloco A · Serra · ES<br>WhatsApp: (27) 99654-9988<br><a href="https://www.instagram.com/clinicadosoculos.serra" target="_blank" rel="noopener">@clinicadosoculos.serra</a></p></div>
+<div class="note">Modelo de site apresentado como proposta. Preços e textos ilustrativos, sujeitos a ajustes com a loja.</div>
+</div></footer>
+<a class="fab" data-wa="Olá, Clínica dos Óculos! Vim pelo site." href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4.1.2.1.8-.1 1.4z"/></svg></a>
+<div class="scrim" id="scrim"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detalhes do modelo"></div>
+<aside class="drawer" id="drawer" aria-label="Sacola">
+<div class="dh"><h2 id="dt">Sua sacola</h2><button class="x" id="closeBag" aria-label="Fechar">×</button></div>
+<div class="ds">
+<div id="s1"><div id="items"></div></div>
+<form id="s2" hidden class="fm" novalidate>
+<h3>Seus dados</h3>
+<div class="f"><label for="f-nome">Nome completo *</label><input id="f-nome" autocomplete="name"></div>
+<div class="f"><label for="f-tel">WhatsApp com DDD *</label><input id="f-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(27) 90000-0000"></div>
+<div class="f"><label for="f-mail">E-mail (opcional)</label><input id="f-mail" type="email" autocomplete="email"></div>
+<h3>Endereço de entrega</h3>
+<div class="h"><label for="f-cep">CEP *</label><input id="f-cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9"></div>
+<div class="h"><label for="f-uf">Estado *</label><select id="f-uf" autocomplete="address-level1"><option value="">Selecione</option></select></div>
+<div class="f"><label for="f-rua">Rua / Avenida *</label><input id="f-rua" autocomplete="address-line1"></div>
+<div class="h"><label for="f-num">Número *</label><input id="f-num" inputmode="numeric"></div>
+<div class="h"><label for="f-comp">Complemento</label><input id="f-comp" autocomplete="address-line2"></div>
+<div class="f"><label for="f-bai">Bairro *</label><input id="f-bai"></div>
+<div class="f"><label for="f-cid">Cidade *</label><input id="f-cid" autocomplete="address-level2"></div>
+<h3>Pagamento e observações</h3>
+<div class="f"><label for="f-pag">Forma de pagamento preferida</label><select id="f-pag"><option>Pix</option><option>Cartão de crédito</option><option>Combinar com a loja</option></select></div>
+<div class="f"><label for="f-obs">Observações (opcional)</label><textarea id="f-obs" rows="2" placeholder="Ex.: preciso das lentes de grau, tenho receita"></textarea></div>
+</form>
+</div>
+<div class="df" id="foot"></div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const IMGS={
+ "tort": "fotos/tort.jpg",
+ "redgold": "fotos/redgold.jpg",
+ "postblue": "fotos/postblue.jpg",
+ "nude": "fotos/nude.jpg",
+ "sport1": "fotos/sport1.jpg",
+ "wine": "fotos/wine.jpg",
+ "postface": "fotos/postface.jpg",
+ "postphoto": "fotos/postphoto.jpg",
+ "sunblack": "fotos/sunblack.jpg",
+ "pink": "fotos/pink.jpg",
+ "clip": "fotos/clip.jpg",
+ "sport2": "fotos/sport2.jpg",
+ "redsilver": "fotos/redsilver.jpg",
+ "group": "fotos/group.jpg",
+ "mirror1": "fotos/mirror1.jpg",
+ "model": "fotos/model.jpg",
+ "blackcat": "fotos/blackcat.jpg",
+ "mirror2": "fotos/mirror2.jpg",
+ "postfix": "fotos/postfix.jpg",
+ "logo": "fotos/logo.png"
+};
+const FONE="5527996549988";
+const wa=m=>`https://wa.me/${FONE}?text=${encodeURIComponent(m)}`;
+const $=s=>document.querySelector(s);
+const brl=v=>"R$ "+v.toFixed(2).replace(".",",").replace(/\B(?=(\d{3})+(?!\d))/g,".");
+const GR="Armações",SOL="Óculos de sol";
+const LENTE="O valor é o da armação. Lentes de grau, luz azul ou fotossensíveis têm orçamento à parte pelo WhatsApp.";
+const FIXO="Preço fixo. Enviamos para todo o Brasil, com frete confirmado pelo WhatsApp.";
+const P=[
+{n:"Armação Redonda Titanium Prata",c:GR,p:189.9,i:["redsilver"],tg:"Memory Titanium",d:"Armação redonda em metal prateado com hastes finas e leves, ideal para um visual clássico.",s:[["Material","Memory Titanium"],["Formato","Redondo"],["Cor","Prata"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Redonda Titanium Dourada",c:GR,p:189.9,i:["redgold"],tg:"Memory Titanium",d:"Armação redonda dourada com pontas das hastes em preto. Leve, elegante e fácil de combinar.",s:[["Material","Memory Titanium"],["Formato","Redondo"],["Cor","Dourada"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Gatinho Preta",c:GR,p:169.9,i:["blackcat"],d:"Gatinho preto brilhante com linhas marcantes. Um clássico que valoriza o olhar.",s:[["Material","TR 90"],["Formato","Gatinho"],["Cor","Preta"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Nude Translúcida",c:GR,p:179.9,i:["nude","group"],tg:"Novo",d:"Armação em tom nude translúcido, com hastes combinando e formato quadrado arredondado.",s:[["Modelo","HG9835"],["Medidas","53 □ 18 – 145"],["Cor","Nude translúcido"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Gatinho Tartaruga",c:GR,p:179.9,i:["tort","group"],d:"Gatinho em acetato tartaruga com hastes douradas. Sofisticada e cheia de personalidade.",s:[["Formato","Gatinho"],["Cor","Tartaruga com dourado"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Gatinho Vinho",c:GR,p:169.9,i:["wine"],d:"Gatinho em vinho profundo com hastes douradas. Delicada e muito feminina.",s:[["Formato","Gatinho arredondado"],["Cor","Vinho"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Rosa Translúcida",c:GR,p:169.9,i:["pink"],d:"Armação rosa translúcida com hastes em tom suave. Leve e moderna.",s:[["Modelo","LH1053"],["Medidas","52 □ 16 – 145"],["Cor","Rosa translúcido"],["Uso","Grau"]],note:LENTE},
+{n:"Armação Metal com Clip Solar",c:GR,p:249.9,i:["clip"],tg:"2 em 1",d:"Armação de grau em metal com clip solar acoplável. Dois óculos em um.",s:[["Modelo","YS3507"],["Medidas","55 □ 16 – 140"],["Formato","Gatinho"],["Extra","Clip solar incluso"]],note:LENTE},
+{n:"Óculos de Sol Gatinho Preto",c:SOL,p:149.9,i:["sunblack"],tg:"Preço fixo",d:"Óculos de sol gatinho preto com lentes escuras em degradê. Estilo e conforto para o dia todo.",s:[["Formato","Gatinho"],["Armação","Preta"],["Lentes","Escuras"],["Uso","Sol"]],note:FIXO},
+{n:"Óculos de Sol Esportivo Espelhado",c:SOL,p:159.9,i:["mirror1","mirror2"],tg:"Preço fixo",d:"Modelo esportivo com lentes espelhadas em tons de azul e verde. Visual marcante e confortável.",s:[["Formato","Esportivo"],["Armação","Preta"],["Lentes","Espelhadas"],["Uso","Sol"]],note:FIXO},
+{n:"Óculos de Sol Esportivo Preto",c:SOL,p:139.9,i:["sport1","sport2"],tg:"Preço fixo",d:"Modelo esportivo preto com lentes escuras. Seguro no rosto e pronto para qualquer passeio.",s:[["Formato","Esportivo"],["Armação","Preta"],["Lentes","Escuras"],["Uso","Sol"]],note:FIXO}
+];
+document.querySelectorAll("[data-i]").forEach(e=>e.src=IMGS[e.dataset.i]);
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+$("#mq").innerHTML=Array(6).fill('Armações<span>✦</span>Óculos de sol<span>✦</span>Conserto<span>✦</span>Lentes<span>✦</span>Envio para todo o Brasil<span>✦</span>').join("");
+let bag=[];try{bag=JSON.parse(localStorage.getItem("clinica-bag")||"[]")}catch(e){}
+bag=bag.filter(b=>P[b.id]&&b.q>0);
+const save=()=>{try{localStorage.setItem("clinica-bag",JSON.stringify(bag))}catch(e){}};
+let cat="Todos",ord="0";
+function chips(){$("#chips").innerHTML=["Todos",GR,SOL].map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join("")}
+function grid(){let l=P.map((p,i)=>({p,i})).filter(x=>cat==="Todos"||x.p.c===cat);
+if(ord==="1")l.sort((a,b)=>a.p.p-b.p.p);if(ord==="2")l.sort((a,b)=>b.p.p-a.p.p);
+$("#grid").innerHTML=l.map(({p,i})=>`<button class="card" data-id="${i}" aria-label="Ver ${p.n}"><div class="ph"><img src="${IMGS[p.i[0]]}" alt="${p.n}" loading="lazy">${p.tg?`<span class="tg">${p.tg}</span>`:""}</div><div class="in"><span class="ct">${p.c.toUpperCase()}</span><h3>${p.n}</h3><span class="d">${p.d}</span><span class="pr">${brl(p.p)}</span><span class="acts"><span class="a1" data-add="${i}">Adicionar</span><span class="a2">Detalhes</span></span></div></button>`).join("")}
+$("#chips").onclick=e=>{const c=e.target.dataset.c;if(c){cat=c;chips();grid()}};
+$("#sort").onchange=e=>{ord=e.target.value;grid()};
+$("#grid").onclick=e=>{const a=e.target.closest("[data-add]");const c=e.target.closest(".card");if(!c)return;if(a){add(+a.dataset.add,1);return}openP(+c.dataset.id)};
+function add(i,q){const k=bag.find(b=>b.id===i);k?k.q+=q:bag.push({id:i,q});save();rend();toast("Adicionado à sacola")}
+function openP(i){const p=P[i];let q=1;
+$("#modal").innerHTML=`<button class="x" id="xm" aria-label="Fechar">×</button><div class="mg"><img id="big" src="${IMGS[p.i[0]]}" alt="${p.n}">${p.i.length>1?`<div class="thumbs">${p.i.map((k,j)=>`<button data-k="${k}" aria-pressed="${j===0}" aria-label="Foto ${j+1}"><img src="${IMGS[k]}" alt=""></button>`).join("")}</div>`:""}</div><div class="mi"><span class="ct" style="font-weight:700;font-size:12px;color:var(--red);letter-spacing:.04em">${p.c.toUpperCase()}</span><h2>${p.n}</h2><span class="pr">${brl(p.p)}</span><p style="color:var(--muted);font-size:15.5px">${p.d}</p><dl class="spec">${p.s.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl><p class="note2">${p.note}</p><div class="qrow"><div class="qty"><button id="qm" aria-label="Diminuir">−</button><span id="qn">1</span><button id="qp" aria-label="Aumentar">+</button></div><button class="btn r" id="ma">Adicionar à sacola</button></div><a class="btn" target="_blank" rel="noopener" href="${wa(`Olá, Clínica dos Óculos! Tenho uma dúvida sobre o modelo ${p.n} (${brl(p.p)}).`)}">Tirar dúvida no WhatsApp</a></div>`;
+$("#modal").classList.add("on");$("#scrim").classList.add("on");
+$("#xm").onclick=closeAll;
+const t=$(".thumbs");if(t)t.onclick=e=>{const b=e.target.closest("button");if(!b)return;$("#big").src=IMGS[b.dataset.k];t.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b))};
+$("#qm").onclick=()=>{q=Math.max(1,q-1);$("#qn").textContent=q};$("#qp").onclick=()=>{q=Math.min(9,q+1);$("#qn").textContent=q};
+$("#ma").onclick=()=>{add(i,q);closeAll()}}
+const sub=()=>bag.reduce((a,b)=>a+b.q*P[b.id].p,0);
+function rend(){$("#count").textContent=bag.reduce((a,b)=>a+b.q,0);
+$("#items").innerHTML=bag.length?bag.map((b,k)=>{const p=P[b.id];return `<div class="it"><img src="${IMGS[p.i[0]]}" alt=""><div><strong>${p.n}</strong><small>${brl(p.p)} cada</small><div class="r2"><div class="qty"><button data-a="m" data-k="${k}" aria-label="Diminuir">−</button><span>${b.q}</span><button data-a="p" data-k="${k}" aria-label="Aumentar">+</button></div><strong>${brl(p.p*b.q)}</strong></div><button class="rm" data-a="r" data-k="${k}">Remover</button></div></div>`}).join(""):'<p class="empty">Sua sacola está vazia.<br>Escolha um modelo no catálogo.</p>';
+if(step===1)foot1()}
+$("#items").onclick=e=>{const a=e.target.dataset.a;if(!a)return;const k=+e.target.dataset.k;if(a==="p")bag[k].q=Math.min(9,bag[k].q+1);else if(a==="m"){bag[k].q--;if(bag[k].q<1)bag.splice(k,1)}else bag.splice(k,1);save();rend()};
+let step=1;
+function foot1(){$("#dt").textContent="Sua sacola";$("#foot").innerHTML=bag.length?`<div class="tot"><span>Subtotal</span><span>${brl(sub())}</span></div><p class="fr">Frete calculado pelo CEP e confirmado pela loja no WhatsApp.</p><button class="btn r" id="go">Continuar para a entrega</button>`:`<a class="btn" href="#catalogo" id="ver">Ver óculos</a>`;
+const g=$("#go");if(g)g.onclick=()=>show(2);const v=$("#ver");if(v)v.onclick=closeAll}
+function show(n){step=n;$("#s1").hidden=n!==1;$("#s2").hidden=n!==2;$(".ds").scrollTop=0;
+if(n===1)foot1();else{$("#dt").textContent="Dados de entrega";$("#foot").innerHTML=`<button class="bk" id="bk">← Voltar para a sacola</button><div class="tot"><span>Subtotal</span><span>${brl(sub())}</span></div><a class="btn wa" id="send" href="#" target="_blank" rel="noopener" role="button">Enviar pedido pelo WhatsApp</a>`;$("#bk").onclick=()=>show(1);$("#send").onclick=send}}
+const UF="AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO".split(" ");
+$("#f-uf").innerHTML+=UF.map(u=>`<option>${u}</option>`).join("");
+$("#f-cep").oninput=e=>{let v=e.target.value.replace(/\D/g,"").slice(0,8);e.target.value=v.length>5?v.slice(0,5)+"-"+v.slice(5):v};
+const V=id=>$("#"+id).value.trim();
+const FS=JSON.parse((()=>{try{return localStorage.getItem("clinica-form")||"{}"}catch(e){return"{}"}})());
+["nome","tel","mail","cep","uf","rua","num","comp","bai","cid","pag"].forEach(k=>{if(FS[k])$("#f-"+k).value=FS[k]});
+function send(e){if(!bag.length){e.preventDefault();return}
+const req=["nome","tel","cep","uf","rua","num","bai","cid"];let bad=null;
+req.forEach(k=>{const el=$("#f-"+k);let ok=!!el.value.trim();if(k==="tel")ok=el.value.replace(/\D/g,"").length>=10;if(k==="cep")ok=el.value.replace(/\D/g,"").length===8;el.setAttribute("aria-invalid",!ok);if(!ok&&!bad)bad=el});
+if(bad){e.preventDefault();toast("Confira os campos destacados");bad.focus();return}
+try{const o={};["nome","tel","mail","cep","uf","rua","num","comp","bai","cid","pag"].forEach(k=>o[k]=V("f-"+k));localStorage.setItem("clinica-form",JSON.stringify(o))}catch(x){}
+let m="*Novo pedido pelo site — Clínica dos Óculos*\n\n*Itens*\n"+bag.map(b=>`• ${b.q}x ${P[b.id].n} — ${brl(P[b.id].p*b.q)}`).join("\n")+`\n\n*Subtotal: ${brl(sub())}*\n_Frete: calcular pelo CEP_\n\n*Dados do cliente*\nNome: ${V("f-nome")}\nWhatsApp: ${V("f-tel")}\n`+(V("f-mail")?`E-mail: ${V("f-mail")}\n`:"")+`\n*Endereço de entrega*\n${V("f-rua")}, ${V("f-num")}`+(V("f-comp")?` — ${V("f-comp")}`:"")+`\nBairro: ${V("f-bai")}\n${V("f-cid")} / ${V("f-uf")}\nCEP: ${V("f-cep")}\n\nPagamento: ${V("f-pag")}`;
+if(V("f-obs"))m+=`\nObservações: ${V("f-obs")}`;
+e.currentTarget.href=wa(m)}
+function closeAll(){["#modal","#drawer","#scrim"].forEach(s=>$(s).classList.remove("on"))}
+$("#openBag").onclick=()=>{show(1);$("#drawer").classList.add("on");$("#scrim").classList.add("on")};
+$("#closeBag").onclick=closeAll;$("#scrim").onclick=closeAll;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll()});
+$("#menu").onclick=()=>{const o=$("#nav").classList.toggle("open");$("#menu").setAttribute("aria-expanded",o)};
+$("#nav").onclick=e=>{if(e.target.tagName==="A"){$("#nav").classList.remove("open");$("#menu").setAttribute("aria-expanded","false")}};
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2200)}
+chips();grid();rend();
+</script>
+</body>
+</html>
